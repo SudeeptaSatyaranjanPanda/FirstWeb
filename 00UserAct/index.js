@@ -12,7 +12,7 @@ db.connect();
  function getUser(token) {
   if (token) {
     try {
-      return jwt.verify(token, process.env.deep);
+      return jwt.verify(token, process.env.DEEP);
     } catch (err) {
       console.log("wrong token")
       throw new AuthenticationError('Session invalid');
