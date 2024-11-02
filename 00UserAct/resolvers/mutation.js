@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 module.exports = {
-  newNote: async (parent, {id}, { models, user }) => {
+  newNote: async (parent, {id,content,author}, { models, user }) => {
     if (!user) {
       throw new AuthenticationError('You must be signed in to create a note');
     }
