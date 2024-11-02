@@ -15,8 +15,8 @@ module.exports = {
     }
     return await models.Note.create({
       id:user.id,
-      content: args.content,
-      author: args.author
+      content: content,
+      author: author
     });
   },
   deleteNote: async (parent, { id }, { models, user }) => {
