@@ -8,6 +8,7 @@ const models = require('./models');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const port =4000;
+const link=process.env.LINK
 db.connect();
  function getUser(token) {
   if (token) {
@@ -35,7 +36,7 @@ async function startServer() {
   server.applyMiddleware({ app, path: '/api' });
   app.listen({ port },'0.0.0.0', () =>
     console.log(
-      `GraphQL Server running at http://0.0.0.0:${port}${server.graphqlPath}`
+      `GraphQL Server running at ${link}${server.graphqlPath}`
     )
   );
 }
